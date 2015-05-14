@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta name="description" content="">
+        <meta name="author" content="">
+        <title>KOPair</title>
+        <!--CSS generated from SASS 
+        -->
+        <link href="assets/css/main.css" rel="stylesheet">
+        <!--HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries 
+        -->
+        <!--if lt IE 9
+        script(src='https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js')
+        script(src='https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js')
+        -->
+    </head>
+    <body>
+        <div role="navigation" class="navbar navbar-inverse navbar-fixed-top">
+            <div class="container">
+                <div class="navbar-header">
+                    <button type="button" data-toggle="collapse" data-target=".navbar-collapse" class="navbar-toggle"><span class="sr-only">Toggle navigation</span><span class="icon-bar"></span><span class="icon-bar"></span><span class="icon-bar"></span></button><a href="#" class="navbar-brand">KOPair</a>
+                </div>
+                <div class="collapse navbar-collapse">
+                    <ul class="nav navbar-nav">
+                        <li data-bind="css: { active: sammy.chosenFolderId()==='home'}"><a href="#">Home</a></li>
+                        <li data-bind="css: { active: sammy.chosenFolderId()==='about'}"><a href="#about">About</a></li>
+                    </ul>
+                </div>
+                <!--/.nav-collapse 
+                -->
+            </div>
+        </div>
+        <div class="container">
+            <div id="home" style="display:none;" data-bind="visible: sammy.chosenFolderId()==='home'">
+
+
+                <!-- TOOL BODY -->
+
+
+                <h1>Write your code for tool of switch pair...</h1>
+
+
+                <!-- TOOL END -->
+
+
+            </div>
+            <div id="about" style="display:none;" data-bind="visible: sammy.chosenFolderId()==='about'">
+                <div class="row">
+                    <div class="col-md-6 col-md-offset-3">
+                        <p>Add about page here</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <script>window.knockoutBootstrapDebug = true;</script>
+        <script data-main="assets/js/config" src="bower_components/requirejs/require.js"></script>
+    </body>
+</html>
