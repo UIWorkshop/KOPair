@@ -18,8 +18,8 @@ define(['jquery',
       errorsAsTitle: false
     });
 
-    // Example observable
-    self.status = ko.observable('active');
+    // Write your code.
+    // ...
 
     // Add submodels here
     // Sammy view model for local navigation
