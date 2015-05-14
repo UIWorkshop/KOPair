@@ -4,4 +4,9 @@ node_modules
 bower_components
 
 # production
+
 dist
+
+# mac
+
+.DS_Store
