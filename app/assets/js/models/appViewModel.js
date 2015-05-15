@@ -5,8 +5,9 @@ define(['jquery',
     'underscore',
     'knockout',
     '../../../assets/js/models/sammyViewModel.js',
+    '../../../assets/js/models/Member.js',
     'knockout.validation'
-    ], function ($, _, ko, SammyViewModel) {
+    ], function ($, _, ko, SammyViewModel, Member) {
   return function () {
     var self = this;
 
@@ -20,8 +21,14 @@ define(['jquery',
     });
 
     // Write your code.
-    // ...
-
+    self.editingMember = ko.observable(new Member());
+    self.memberList = ko.observableArray();
+    self.addMember = function (member) {
+      self.memberList.push(new Member(
+        ko.unwrap(member.name),
+        ko.unwrap(member.tyro)
+      ));
+    };
     // Add submodels here
     // Sammy view model for local navigation
     self.sammy = new SammyViewModel();
