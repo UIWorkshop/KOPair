@@ -24,10 +24,16 @@ define(['jquery',
     self.editingMember = ko.observable(new Member());
     self.memberList = ko.observableArray();
     self.addMember = function (member) {
-      self.memberList.push(new Member(
-        ko.unwrap(member.name),
-        ko.unwrap(member.tyro)
-      ));
+      var list = ko.unwrap(self.memberList);
+      var has = list.some(function (item) {
+        return ko.unwrap(item.name) === ko.unwrap(member.name);
+      });
+      if (!has) {
+        self.memberList.push(new Member(
+          ko.unwrap(member.name),
+          ko.unwrap(member.tyro)
+        ));
+      }
     };
     self.removeMember = function (member) {
       self.memberList.remove(member);
