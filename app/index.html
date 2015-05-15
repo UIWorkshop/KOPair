@@ -71,7 +71,17 @@
                             </ul>
                         </div>
                     </div>
-                    <div class="col-sm-12 col-md-7 col-lg-8"></div>
+                    <div class="col-sm-12 col-md-7 col-lg-8">
+                        <div class="form-group">
+                            <button class="pull-right btn btn-warning" data-bind="click: switchPair">Switch</button>
+                            <div class="help-block">Click the button to switch pair</div>
+                        </div>
+                        <div class="panel">
+                            <ul class="list-group" data-bind="foreach: pairs">
+                                <li class="list-group-item" data-bind="text: name"></li>
+                            </ul>
+                        </div>
+                    </div>
                 </div>
 
 
