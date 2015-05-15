@@ -29,6 +29,9 @@ define(['jquery',
         ko.unwrap(member.tyro)
       ));
     };
+    self.removeMember = function (member) {
+      self.memberList.remove(member);
+    };
     // Add submodels here
     // Sammy view model for local navigation
     self.sammy = new SammyViewModel();

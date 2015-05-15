@@ -62,9 +62,14 @@
                             </div>
                             <button class="btn btn-primary" data-bind="click: $parent.addMember">Add member</button>
                         </div>
-                        <ul data-bind="foreach: memberList">
-                            <li data-bind="text: fullName"></li>
-                        </ul>
+                        <div class="panel">
+                            <ul class="list-group" data-bind="foreach: memberList">
+                                <li class="list-group-item">
+                                    <span data-bind="text: fullName"></span>
+                                    <a class="btn btn-link" data-bind="click: $parent.removeMember">Remove</a>
+                                </li>
+                            </ul>
+                        </div>
                     </div>
                     <div class="col-sm-12 col-md-7 col-lg-8"></div>
                 </div>
