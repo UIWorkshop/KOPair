@@ -3,6 +3,7 @@
 require.config({
   paths: {
     'bower_components': '../../bower_components',
+    'underscore': '../../bower_components/underscore/underscore',
     'jquery': '../../bower_components/jquery/dist/jquery',
     'sammy': '../../bower_components/sammy/lib/sammy',
     'knockout.validation': '../../bower_components/knockout.validation/Dist/knockout.validation',

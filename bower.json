@@ -9,7 +9,8 @@
     "knockout.validation": "^1.0.2",
     "bootbox": "^4.2.0",
     "notifyjs-dist": "^0.3.2",
-    "bootstrap-sass-official": "^3.2.0"
+    "bootstrap-sass-official": "^3.2.0",
+    "underscore": "^1.8.0"
   }
 }
 

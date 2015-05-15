@@ -2,10 +2,11 @@
 
 /* global define:true*/
 define(['jquery',
+    'underscore',
     'knockout',
     '../../../assets/js/models/sammyViewModel.js',
     'knockout.validation'
-    ], function ($, ko, SammyViewModel) {
+    ], function ($, _, ko, SammyViewModel) {
   return function () {
     var self = this;
 
