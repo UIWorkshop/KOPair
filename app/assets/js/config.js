@@ -28,8 +28,8 @@ require.config({
   },
   map: {
     '*': {
-      'knockout': '../../bower_components/knockout.js/knockout',
-      'ko': '../../bower_components/knockout.js/knockout'
+      'knockout': '../../bower_components/knockoutjs/dist/knockout',
+      'ko': '../../bower_components/knockoutjs/dist/knockout'
     }
   }
 });
@@ -40,8 +40,8 @@ if (window.knockoutBootstrapDebug) {
   require.config({
     map: {
       '*': {
-        'knockout': '../../bower_components/knockout.js/knockout.debug.js',
-        'ko': '../../bower_components/knockout.js/knockout.debug.js'
+        'knockout': '../../bower_components/knockoutjs/dist/knockout.debug.js',
+        'ko': '../../bower_components/knockoutjs/dist/knockout.debug.js'
       }
     }
   });
