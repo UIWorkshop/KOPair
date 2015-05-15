@@ -10,3 +10,7 @@ dist
 # mac
 
 .DS_Store
+
+# SASS
+
+.sass-cache
