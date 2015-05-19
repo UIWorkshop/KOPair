@@ -6,7 +6,9 @@ define(['jquery',
     ], function ($, ko) {
   return function (name, tyro) {
     var self = this;
-    self.name = ko.observable(name || '');
+    self.name = ko.observable(name || '').extend({
+      required: true
+    });
     self.tyro = ko.observable(tyro || false);
     self.fullName = ko.computed(function () {
       var tyro = '';

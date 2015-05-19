@@ -16,7 +16,7 @@ define(['jquery',
     // To decorate form-group elements, use the validationElement binding
     ko.validation.configure({
       decorateElement: true,
-      errorElementClass: 'has-error',
+      errorElementClass: '',
       errorMessageClass: 'help-block',
       errorsAsTitle: false
     });
@@ -26,6 +26,10 @@ define(['jquery',
     self.memberList = ko.observableArray();
     self.pairs = ko.observableArray();
     self.addMember = function (member) {
+      member.name.isModified(true);
+      if (!member.name.isValid()) {
+        return;
+      }
       var list = ko.unwrap(self.memberList);
       var has = list.some(function (item) {
         return ko.unwrap(item.name) === ko.unwrap(member.name);
