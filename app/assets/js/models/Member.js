@@ -4,8 +4,9 @@
 define(['jquery',
     'knockout',
     ], function ($, ko) {
-  return function (name, tyro) {
+  return function (name, tyro, id) {
     var self = this;
+    self.id = ko.observable(id || '');
     self.name = ko.observable(name || '').extend({
       required: true
     });

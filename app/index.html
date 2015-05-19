@@ -60,12 +60,18 @@
                                     </label>
                                 </div>
                             </div>
+                            <!-- ko if: !(id() > 0) -->
                             <button class="btn btn-primary" data-bind="click: $parent.addMember">Add member</button>
+                            <!-- /ko -->
+                            <!-- ko if: id() > 0 -->
+                            <button class="btn btn-success" data-bind="click: $parent.updateMember">Save Member</button>
+                            <button class="btn btn-link" data-bind="click: $parent.clearMember">Cancel</button>
+                            <!-- /ko -->
                         </div>
                         <div class="panel">
                             <ul class="list-group" data-bind="foreach: memberList">
                                 <li class="list-group-item">
-                                    <span data-bind="text: fullName"></span>
+                                    <a data-bind="text: fullName, click: $parent.editMember"></a>
                                     <a class="btn btn-link" data-bind="click: $parent.removeMember">Remove</a>
                                 </li>
                             </ul>

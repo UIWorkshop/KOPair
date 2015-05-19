@@ -22,7 +22,7 @@ define(['jquery',
     });
 
     // Write your code.
-    self.editingMember = ko.observable(new Member());
+    self.editingMember = new Member();
     self.memberList = ko.observableArray();
     self.pairs = ko.observableArray();
     self.addMember = function (member) {
@@ -37,12 +37,38 @@ define(['jquery',
       if (!has) {
         self.memberList.push(new Member(
           ko.unwrap(member.name),
-          ko.unwrap(member.tyro)
+          ko.unwrap(member.tyro),
+          (new Date()).getTime()
         ));
       }
     };
+
     self.removeMember = function (member) {
       self.memberList.remove(member);
+    };
+
+    self.editMember = function (member) {
+      self.editingMember.name(ko.unwrap(member.name));
+      self.editingMember.tyro(ko.unwrap(member.tyro));
+      self.editingMember.id(ko.unwrap(member.id));
+    };
+
+    self.clearMember = function (member) {
+      member.name('');
+      member.id(0);
+      member.tyro(false);
+      member.name.isModified(false);
+    };
+
+    self.updateMember = function (editingMember) {
+      var id = ko.unwrap(editingMember.id);
+      _.each(ko.unwrap(self.memberList), function (member) {
+        if (ko.unwrap(member.id) === id) {
+          member.name(ko.unwrap(editingMember.name));
+          member.tyro(ko.unwrap(editingMember.tyro));
+        }
+      });
+      self.clearMember(editingMember);
     };
 
     self.switchPair = function () {
