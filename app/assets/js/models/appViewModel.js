@@ -23,8 +23,18 @@ define(['jquery',
 
     // Write your code.
     self.editingMember = new Member();
+    self.showResults = ko.observable(false);
     self.memberList = ko.observableArray();
-    self.pairs = ko.observableArray();
+    self.pairs = ko.pureComputed(function () {
+      var list = ko.unwrap(self.memberList);
+      list = _.sample(list, list.length);
+      var pairs = [];
+      for (var index = 0; index < list.length; index += 2) {
+        pairs.push(new Pair(list[index], list[index + 1]));
+      }
+      return pairs;
+    });
+
     self.addMember = function (member) {
       member.name.isModified(true);
       if (!member.name.isValid()) {
@@ -69,12 +79,14 @@ define(['jquery',
         }
       });
       self.clearMember(editingMember);
+      self.switchPair();
     };
 
     self.switchPair = function () {
       var list = ko.unwrap(self.memberList);
-      for (var index = 0; index < list.length; index += 2) {
-        self.pairs.push(new Pair(list[index], list[index + 1]));
+      if (list.length) {
+        self.showResults(true);
+        self.memberList(list);
       }
     };
 

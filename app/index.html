@@ -82,7 +82,7 @@
                             <button class="pull-right btn btn-warning" data-bind="click: switchPair">Switch</button>
                             <div class="help-block">Click the button to switch pair</div>
                         </div>
-                        <div class="panel">
+                        <div class="panel" data-bind="visible: showResults">
                             <ul class="list-group" data-bind="foreach: pairs">
                                 <li class="list-group-item" data-bind="text: name"></li>
                             </ul>

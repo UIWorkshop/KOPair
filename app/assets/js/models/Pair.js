@@ -9,9 +9,10 @@ define(['jquery',
     self.a = memberA;
     self.b = memberB;
     self.name = ko.computed(function () {
-      var aName = self.a && self.a.fullName;
-      var bName = self.b && self.b.fullName;
-      return ko.unwrap(aName) + ' - ' + ko.unwrap(bName);
+      var aName = self.a && ko.unwrap(self.a.fullName);
+      var bName = self.b && ko.unwrap(self.b.fullName);
+      
+      return bName ? (aName + ' - ' + bName) : aName;
     });
   };
 });
